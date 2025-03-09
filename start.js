@@ -8,7 +8,7 @@ module.exports = {
         env: { },                   // Edit this to customize environment variables (see documentation)
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "python app.py",    // Edit with your custom commands
+          "python webui.py --device 0",    // Edit with your custom commands
         ],
         on: [{
           // The regular expression pattern to monitor.
@@ -28,7 +28,8 @@ module.exports = {
       method: "local.set",
       params: {
         // the input.event is the regular expression match object from the previous step
-        url: "{{input.event[0]}}"
+        //url: "{{input.event[0]}}"
+		url: "http://localhost:7860"
       }
     }
   ]

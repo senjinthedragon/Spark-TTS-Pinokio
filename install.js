@@ -5,7 +5,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/SparkAudio/Spark-TTS.git app",
+          "git clone https://github.com/senjinthedragon/Spark-TTS.git app",
         ]
       }
     },
@@ -17,6 +17,8 @@ module.exports = {
         params: {
           venv: "env",                // Edit this to customize the venv folder path
           path: "app",                // Edit this to customize the path to start the shell from
+		  platform: "win32",
+		  gpu: "nvidia",
           // xformers: true   // uncomment this line if your project requires xformers
         }
       }
@@ -28,8 +30,9 @@ module.exports = {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "uv pip install gradio devicetorch",
-          "uv pip install -r requirements.txt"
+          "uv pip install -r requirements.txt",
+		  "git lfs install",
+		  "git clone https://huggingface.co/SparkAudio/Spark-TTS-0.5B pretrained_models/Spark-TTS-0.5B"
         ]
       }
     },
